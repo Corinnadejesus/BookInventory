@@ -6,10 +6,9 @@ type BookItemProps = {
 };
 
 const BookItem = ({ book }: BookItemProps) => {
-//   console.log("Book", book);
   return (
     <View style={styles.container}>
-      <Image source={{ uri: book.image }} style={styles.image} />
+      <Image source={{ uri: book?.image }} style={styles.image} />
       <View style={styles.contentContainer}>
         <Text style={styles.title}>{book.title}</Text>
         <Text>by {book.authors?.join(", ")}</Text>
@@ -24,7 +23,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   image: {
-    flex: 1,
+    flex: 2,
     aspectRatio: 2 / 3,
     marginRight: 10,
   },
