@@ -1,4 +1,5 @@
 const tintColorLight = "#46AA71";
+const saveButtonColor = "royalBlue";
 const tintColorDark = "#fff";
 
 export default {
