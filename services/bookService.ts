@@ -5,10 +5,13 @@ export const parseBook = (
   if (provider === "googleBooksSearch") {
     return {
       title: item.volumeInfo.title,
+      subtitle: item.volumeInfo.subtitle,
       image: item.volumeInfo.imageLinks?.thumbnail,
       authors: item.volumeInfo.authors,
       isbn: item.volumeInfo.industryIdentifiers?.[0]?.identifier,
       categories: item.volumeInfo.categories,
+      description: item.volumeInfo.description,
+      rating: item.volumeInfo.averageRating,
     };
   } else {
     return {

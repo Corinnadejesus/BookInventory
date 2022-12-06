@@ -54,7 +54,11 @@ function RootNavigator() {
         options={{ headerShown: false }}
       />
 
-      <Stack.Screen name="MyBookDetails" component={BookDetails} />
+      <Stack.Screen
+        name="MyBookDetails"
+        component={BookDetails}
+        options={{ headerShown: true }}
+      />
 
       <Stack.Screen
         name="NotFound"

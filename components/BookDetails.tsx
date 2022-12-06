@@ -12,8 +12,14 @@ const BookDetails = () => {
     <SafeAreaView edges={["top"]} style={styles.container}>
       <View>
         <Image source={{ uri: book?.image }} style={styles.image} />
-        <Text>Author: {book.title}</Text>
-        <Text>by {book.authors?.join(", ")}</Text>
+        <View style={styles.contentContainer}>
+          <Text>{book.title}</Text>
+          <Text>{book.subtitle}</Text>
+          <Text>by {book.authors?.join(", ")}</Text>
+          <Text>Rating: {book.rating}</Text>
+          <Text>Category: {book.categories?.join(", ")}</Text>
+          <Text>{book.description}</Text>
+        </View>
       </View>
     </SafeAreaView>
   );
