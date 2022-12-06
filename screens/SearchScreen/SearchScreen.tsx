@@ -83,7 +83,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: "white",
+    backgroundColor: "#F1EFF1",
   },
   title: {
     fontSize: 20,
@@ -100,7 +100,7 @@ const styles = StyleSheet.create({
   },
   input: {
     flex: 1,
-    borderColor: "gainsboro",
+    borderColor: "white",
     borderRadius: 5,
     padding: 10,
     marginVertical: 5,
@@ -110,5 +110,6 @@ const styles = StyleSheet.create({
     justifyContent: "space-around",
     height: 50,
     alignItems: "center",
+    backgroundColor: "#F1EFF1",
   },
 });

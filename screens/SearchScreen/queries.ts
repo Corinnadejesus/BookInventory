@@ -5,7 +5,7 @@ export const searchQuery = gql`
     googleBooksSearch(q: $q, country: "US") {
       items {
         id
-        volumeInfo {ß
+        volumeInfo {
           authors
           averageRating
           description
@@ -18,6 +18,7 @@ export const searchQuery = gql`
             identifier
             type
           }
+          categories
         }
       }
     }

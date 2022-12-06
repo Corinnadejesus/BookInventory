@@ -1,15 +1,15 @@
 import { FlatList, StyleSheet } from "react-native";
-import BookItem from "../components/BookItem";
 import { View } from "../components/Themed";
 import { useMyBooks } from "../context/MyBooksProvider";
+import BookDetails from "../components/BookDetails";
 
-export default function MyBooksScreen() {
+export default function MyBookDetails() {
   const { savedBooks } = useMyBooks();
   return (
     <View style={styles.container}>
       <FlatList
         data={savedBooks}
-        renderItem={({ item }) => <BookItem book={item} />}
+        renderItem={({ item }) => <BookDetails book={item} />}
       />
     </View>
   );
@@ -19,7 +19,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: "#F1EFF1",
   },
   title: {
     fontSize: 20,

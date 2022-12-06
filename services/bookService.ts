@@ -8,6 +8,7 @@ export const parseBook = (
       image: item.volumeInfo.imageLinks?.thumbnail,
       authors: item.volumeInfo.authors,
       isbn: item.volumeInfo.industryIdentifiers?.[0]?.identifier,
+      categories: item.volumeInfo.categories,
     };
   } else {
     return {

@@ -5,6 +5,5 @@ type Book = {
   title: string;
   authors: string[];
   isbn: string;
+  categories: string[];
 };
-
-
