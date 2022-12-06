@@ -6,70 +6,23 @@ import {
   Button,
 } from "react-native";
 import { useState } from "react";
-import { Text, View } from "../components/Themed";
-import { gql, useLazyQuery } from "@apollo/client";
-import BookItem from "../components/BookItem";
+import { Text, View } from "../../components/Themed";
+import { useLazyQuery } from "@apollo/client";
+import BookItem from "../../components/BookItem";
+import { SafeAreaView } from "react-native-safe-area-context";
+import { searchQuery } from "./queries";
+import { parseBook } from "../../services/bookService";
 
-const query = gql`
-  query SearchBooks($q: String) {
-    googleBooksSearch(q: $q, country: "US") {
-      items {
-        id
-        volumeInfo {
-          authors
-          averageRating
-          description
-          imageLinks {
-            thumbnail
-          }
-          title
-          subtitle
-          industryIdentifiers {
-            identifier
-            type
-          }
-        }
-      }
-    }
-    openLibrarySearch(q: $q) {
-      docs {
-        author_name
-        title
-        cover_edition_key
-        isbn
-      }
-    }
-  }
-`;
-
-export default function TabOneScreen() {
+export default function SearchScreen() {
   const [search, setSearch] = useState("");
   const [provider, setProvider] = useState<
     "googleBooksSearch" | "openLibrarySearch"
   >("googleBooksSearch");
 
-  const [runQuery, { data, loading, error }] = useLazyQuery(query);
-
-  const parseBook = (item) => {
-    if (provider === "googleBooksSearch") {
-      return {
-        title: item.volumeInfo.title,
-        image: item.volumeInfo.imageLinks?.thumbnail,
-        authors: item.volumeInfo.authors,
-        isbn: item.volumeInfo.industryIdentifiers?.[0]?.identifier,
-      };
-    } else {
-      return {
-        title: item.title,
-        authors: item.author_name,
-        image: `https://covers.openlibrary.org/b/olid/${item.cover_edition_key}-M.jpg`,
-        isbn: item.isbn?.[0],
-      };
-    }
-  };
+  const [runQuery, { data, loading, error }] = useLazyQuery(searchQuery);
 
   return (
-    <View style={styles.container}>
+    <SafeAreaView edges={["top"]} style={styles.container}>
       <View style={styles.header}>
         <TextInput
           value={search}
@@ -120,9 +73,9 @@ export default function TabOneScreen() {
             : data?.openLibrarySearch?.docs) || []
         }
         showsVerticalScrollIndicator={false}
-        renderItem={({ item }) => <BookItem book={parseBook(item)} />}
+        renderItem={({ item }) => <BookItem book={parseBook(item, provider)} />}
       />
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -130,6 +83,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
+    backgroundColor: "white",
   },
   title: {
     fontSize: 20,
