@@ -9,14 +9,19 @@ const BookDetails = () => {
   } = useRoute();
 
   return (
-    <SafeAreaView edges={["top"]} style={styles.container}>
+    <SafeAreaView edges={["bottom"]} style={styles.container}>
       <View>
         <Image source={{ uri: book?.image }} style={styles.image} />
         <View style={styles.contentContainer}>
-          <Text>{book.title}</Text>
-          <Text>Subtitle: {book.subtitle}</Text>
-          <Text>by {book.authors?.join(", ")}</Text>
-          <Text>Rating: {book.rating}</Text>
+          <Text style={styles.fonts}>{book.title}</Text>
+          <Text>
+            Subtitle: {book.subtitle ? book.subtitle : "No Subtitle Added"}
+          </Text>
+          <Text>
+            Author:{" "}
+            {book.authors ? book.authors?.join(", ") : "No Authors Added"}
+          </Text>
+          <Text>Rating: {book.rating ? book.rating : "No Rating Added"}</Text>
           <Text>Category: {book.categories?.join(", ")}</Text>
           <Text>{book.description}</Text>
         </View>
@@ -27,18 +32,24 @@ const BookDetails = () => {
 
 const styles = StyleSheet.create({
   container: {
-    flexDirection: "row",
-    marginVertical: 10,
+    // flexDirection: "row",
+    // marginVertical: 10,
+    // backgroundColor: "#F1EFF1",
+    justifyContent: "center",
   },
   image: {
-    flex: 2,
-    aspectRatio: 2 / 3,
-    marginRight: 10,
+    flex: 5,
+    aspectRatio: 2.5 / 3.5,
+    // marginRight: 15,
   },
   contentContainer: {
-    flex: 4,
-    borderColor: "lightgray",
-    borderBottomWidth: 0.5,
+    flex: 1.8,
+    alignItems: "center",
+    justifyContent: "center",
+    // backgroundColor: "#F1EFF1",
+  },
+  fonts: {
+    fontWeight: "bold",
   },
 });
 
