@@ -99,8 +99,8 @@ const styles = StyleSheet.create({
     alignItems: "center",
   },
   input: {
-    flex: 1,
-    borderColor: "white",
+    flex: 2,
+    borderColor: "black",
     borderRadius: 5,
     padding: 10,
     marginVertical: 5,

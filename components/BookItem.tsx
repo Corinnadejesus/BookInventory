@@ -23,7 +23,7 @@ const BookItem = ({ book }: BookItemProps) => {
   return (
     <TouchableOpacity
       onPress={() => {
-        navigation.navigate("MyBookDetails", { book });
+        navigation.navigate("Details", { book });
       }}
     >
       <View style={styles.container}>

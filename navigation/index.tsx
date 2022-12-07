@@ -22,7 +22,7 @@ import SearchScreen from "../screens/SearchScreen/SearchScreen";
 import MyBooksScreen from "../screens/MyBooksScreen";
 import { RootStackParamList, RootTabParamList } from "../types";
 import LinkingConfiguration from "./LinkingConfiguration";
-import BookDetails from "../screens/MyBookDetails";
+import MyBookDetails from "../screens/MyBookDetails";
 
 export default function Navigation({
   colorScheme,
@@ -55,8 +55,8 @@ function RootNavigator() {
       />
 
       <Stack.Screen
-        name="MyBookDetails"
-        component={BookDetails}
+        name="Details"
+        component={MyBookDetails}
         options={{ headerShown: true }}
       />
 

@@ -7,7 +7,17 @@ import {
 } from "react";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
-export const MyBooksContext = createContext({});
+type MyBooksContextType = {
+  onToggleSaved: (book: Book) => void;
+  isBookSaved: (book: Book) => boolean;
+  savedBooks: Book[];
+};
+
+export const MyBooksContext = createContext<MyBooksContextType>({
+  onToggleSaved: () => {},
+  isBookSaved: () => false,
+  savedBooks: [],
+});
 
 type Props = {
   children: ReactNode;

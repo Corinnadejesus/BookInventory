@@ -14,7 +14,7 @@ const BookDetails = () => {
         <Image source={{ uri: book?.image }} style={styles.image} />
         <View style={styles.contentContainer}>
           <Text>{book.title}</Text>
-          <Text>{book.subtitle}</Text>
+          <Text>Subtitle: {book.subtitle}</Text>
           <Text>by {book.authors?.join(", ")}</Text>
           <Text>Rating: {book.rating}</Text>
           <Text>Category: {book.categories?.join(", ")}</Text>
