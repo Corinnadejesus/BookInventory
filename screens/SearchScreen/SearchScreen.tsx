@@ -27,7 +27,7 @@ export default function SearchScreen() {
         <TextInput
           value={search}
           onChangeText={setSearch}
-          placeholder="Search..."
+          placeholder="Search Book Title, ISBN, Category.."
           style={styles.input}
         />
         <Button
@@ -97,11 +97,13 @@ const styles = StyleSheet.create({
   header: {
     flexDirection: "row",
     alignItems: "center",
+    backgroundColor: "#F1EFF1",
   },
   input: {
-    flex: 2,
-    borderColor: "black",
-    borderRadius: 5,
+    flex: 1,
+    borderWidth: 1.3,
+    borderColor: "pink",
+    borderRadius: 7,
     padding: 10,
     marginVertical: 5,
   },

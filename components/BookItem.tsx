@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
     marginVertical: 10,
   },
   image: {
-    flex: 2.5,
+    flex: 2,
     aspectRatio: 2 / 3,
     marginRight: 10,
   },

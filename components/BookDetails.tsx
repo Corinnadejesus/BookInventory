@@ -32,21 +32,18 @@ const BookDetails = () => {
 
 const styles = StyleSheet.create({
   container: {
-    // flexDirection: "row",
-    // marginVertical: 10,
-    // backgroundColor: "#F1EFF1",
-    justifyContent: "center",
+    flex: 1,
+    backgroundColor: "#F1EFF1",
   },
   image: {
-    flex: 5,
-    aspectRatio: 2.5 / 3.5,
-    // marginRight: 15,
+    flex: 1,
+    aspectRatio: 3 / 4,
+    resizeMode: "contain",
   },
   contentContainer: {
     flex: 1.8,
     alignItems: "center",
     justifyContent: "center",
-    // backgroundColor: "#F1EFF1",
   },
   fonts: {
     fontWeight: "bold",
