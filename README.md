@@ -1,5 +1,5 @@
-# BooksMobile
+# BookInventory
 
-A Book inventory mobile application using React Native with Typescript.
-APIs used include, Google Books API, Open Library API, GraphQL API created with StepZen.
-Apollo Client was used for successful state management of local and remote data with GraphQL.
+A mobile application to search, view, and save a plethora of books using React Native with Typescript.
+APIs include: Google Books, Open Library, GraphQL API created with StepZen.
+React Context and Apollo Client was used for successful state management of local and remote data with GraphQL.
